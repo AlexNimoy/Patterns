@@ -27,7 +27,7 @@
 
 interface Strategy
 {
-  public function pay($data);
+  public function execute($data);
 }
 
 class Context
@@ -45,14 +45,14 @@ class Context
 
   public function sellGoods()
   {
-    $result = $this->strategy->pay("50");
+    $result = $this->strategy->execute("50");
     echo $result . "\n";
   }
 }
 
 class CardStrategy implements Strategy
 {
-  public function pay($data)
+  public function execute($data)
   {
     return "Pay by card: ". $data;
   }
@@ -60,7 +60,7 @@ class CardStrategy implements Strategy
 
 class CacheStrategy implements Strategy
 {
-    public function pay($data)
+    public function execute($data)
     {
       return "Pay by cache: ". $data;
     }
