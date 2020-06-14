@@ -164,3 +164,31 @@ $caretaker->undo();
 echo "\nClient: Once more!\n\n";
 $caretaker->undo();
 ```
+
+## Result
+
+```
+Originator: Initial state is: Mega State.
+
+Caretaker: Saving Originator's state...
+Originator: Doing something.
+Originator: State has changed to: rnOmoRPVkhiBzcyvQaWGxLlFJMdesp
+
+Caretaker: Saving Originator's state...
+Originator: Doing something.
+Originator: State has changed to: pJdWOYfIHnkacRFoTMhBszKUwEbSCg
+
+Caretaker: Here's the list of mementos:
+2020-06-14 10:27:26 / (Mega Stat...)
+2020-06-14 10:27:26 / (rnOmoRPVk...)
+
+Client: Now, let's rollback!
+
+Caretaker: Restoring state to: 2020-06-14 10:27:26 / (rnOmoRPVk...)
+Originator: State has changed to: rnOmoRPVkhiBzcyvQaWGxLlFJMdesp
+
+Client: Once more!
+
+Caretaker: Restoring state to: 2020-06-14 10:27:26 / (Mega Stat...)
+Originator: State has changed to: Mega State.
+```
